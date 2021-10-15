@@ -72,3 +72,12 @@
     border: 2px solid black;
     width: 100%;
 }
+
+@media (max-width:638px) {
+    .last {
+        display: none;
+    }
+    .main {
+        flex-wrap: nowrap;
+    }
+}
