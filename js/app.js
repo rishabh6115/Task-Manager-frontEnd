@@ -20,8 +20,10 @@ function addNewTask(getInput) {
 
     newDiv.classList.add('items')
     const check = document.createElement('i')
-        // check.classList.add('far', "fa-check-circle", "icon0")
-        // newDiv.append(check)
+    check.classList.add('far', "fa-check-circle", "icon0", "vs")
+        // check.style.visibility('none')
+    newDiv.append(check)
+
     section.append(newDiv)
 
     const newSpan = document.createElement('div')
@@ -53,7 +55,13 @@ function addNewTask(getInput) {
     const edit = document.querySelectorAll('.icon2')
     for (let e of edit) {
         e.addEventListener('click', () => {
-            e.parentElement.parentElement.parentElement.classList.toggle('tg')
+            const parent = e.parentElement.parentElement.parentElement
+            parent.style.textDecoration = 'line-through'
+            const editBtn = e.parentElement.parentElement.parentElement.children[0]
+
+            editBtn.classList.remove('vs')
+
+
         })
     }
 
